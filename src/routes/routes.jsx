@@ -3,6 +3,8 @@ import Home from "../Pages/Home";
 import Books from "../Pages/Books";
 
 import MainLayout from "../Layout/MainLayout";
+import Error404 from "../Pages/NotFound404";
+import NotFound404 from "../Pages/NotFound404";
 
 export const router = createBrowserRouter([{
     path : '/',
@@ -17,5 +19,6 @@ export const router = createBrowserRouter([{
             path : '/books',
             Component : Books
         }
-    ]
+    ],
+    errorElement : <NotFound404/>,
 }])
