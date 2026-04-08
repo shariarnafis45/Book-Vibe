@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router";
+import { BookContext } from "../../Context/BookContext/BookContext";
 
 const BookDetailsCard = ({ booksData }) => {
   const params = useParams();
   const selectedBookData = booksData.find((book) => params.id == book.bookId);
-  console.log(selectedBookData);
+
+  const { handleMarkAsRead,handleWishList } = useContext(BookContext);
+
   return (
     <div className="max-w-[1200px] mx-auto my-12 px-5 ">
       <div className=" flex justify-center lg:justify-start flex-wrap gap-10  bg-base-100 ">
@@ -37,7 +40,7 @@ const BookDetailsCard = ({ booksData }) => {
               ))}
             </div>
           </div>
-          <div>
+          <div className="space-y-2">
             <p>
               Num of pages :{" "}
               <span className="font-semibold lg:ml-10">
@@ -45,7 +48,7 @@ const BookDetailsCard = ({ booksData }) => {
               </span>
             </p>
             <p>
-              Publisher: {" "}
+              Publisher:{" "}
               <span className="font-semibold lg:ml-20">
                 {selectedBookData.publisher}
               </span>
@@ -64,8 +67,15 @@ const BookDetailsCard = ({ booksData }) => {
             </p>
           </div>
           <div className="flex gap-5 justify-center lg:justify-start">
-            <button className="btn ">Read</button>
-            <button className="btn bg-[#59C6D2] text-white ">Wishlist</button>
+            <button
+              onClick={() => handleMarkAsRead(selectedBookData)}
+              className="btn "
+            >
+              Mark as Read
+            </button>
+            <button onClick={() => handleWishList(selectedBookData)} className="btn bg-[#59C6D2] text-white ">
+              Add to Wishlist
+            </button>
           </div>
         </div>
       </div>

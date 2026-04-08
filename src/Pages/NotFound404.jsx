@@ -248,23 +248,7 @@ export default function NotFound404() {
           Double-check the URL, or navigate back to safety.
         </p>
 
-        {/* Terminal-style path */}
-        <div
-          className={`mono anim-fade-up-4 w-full max-w-sm mb-8 px-4 py-3 text-xs text-left`}
-          style={{
-            background: "rgba(0,0,0,0.4)",
-            border: "1px solid rgba(167,139,250,0.15)",
-            borderRadius: "2px",
-          }}
-        >
-          <span className="text-violet-400">~ $</span>{" "}
-          <span className="text-slate-300">curl </span>
-          <span className="text-sky-400">
-            {typeof window !== "undefined" ? window.location.href : "https://yoursite.com/???"}
-          </span>
-          <br />
-          <span className="text-red-400">{">"} 404 Not Found</span>
-        </div>
+            
 
         {/* CTA Buttons */}
         <div className={`anim-fade-up-5 flex flex-wrap gap-4 justify-center`}>
