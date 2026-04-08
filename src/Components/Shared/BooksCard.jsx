@@ -1,9 +1,10 @@
 import React from "react";
 import { IoIosStarOutline } from "react-icons/io";
+import { Link } from "react-router";
 
 const BooksCard = ({ book }) => {
   return (
-    <div className="card bg-base-100  shadow-sm">
+    <Link to={`/book-details/${book.bookId}`} className="card bg-base-100  shadow-sm">
       <div className="p-4">
         <figure className="p-6 bg-base-300">
           <img
@@ -29,7 +30,7 @@ const BooksCard = ({ book }) => {
           <div><p className="flex items-center gap-2">{book.rating} <IoIosStarOutline /></p></div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
