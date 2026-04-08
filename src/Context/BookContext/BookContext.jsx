@@ -36,6 +36,7 @@ const BookProvider = ({ children }) => {
 
   const data = {
     storedBooks,
+    wishList,
     setStoredBooks,
     handleMarkAsRead,
     handleWishList,
